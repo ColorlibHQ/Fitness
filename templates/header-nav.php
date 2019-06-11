@@ -27,24 +27,27 @@
             </div>			  					
         </div>
     </div>
-    <div class="container main-menu">
-        <div class="row align-items-center justify-content-center">
-            <nav id="nav-menu-container">
-            <?php
-                // Header Menu
-                if( has_nav_menu( 'primary-menu' ) ) {
+    <?php
+    if( has_nav_menu( 'primary-menu' ) ) {
+        ?>
+        <div class="container main-menu">
+            <div class="row align-items-center justify-content-center">
+                <nav id="nav-menu-container">
+                <?php
+                    // Header Menu
                     $args = array(
                         'theme_location' => 'primary-menu',
                         'container'      => '',
-                        'depth'          => 2,
+                        'depth'          => 3,
                         'menu_class'     => 'nav-menu',
                         'fallback_cb'    => 'fitness_bootstrap_navwalker::fallback',
                         'walker'         => new fitness_bootstrap_navwalker(),
                     );  
                     wp_nav_menu( $args );
-                }
-                ?>
-            </nav><!-- #nav-menu-container -->		
+                    ?>
+                </nav><!-- #nav-menu-container -->		
+            </div>
         </div>
-    </div>
+        <?php 
+    } ?>
 </header>

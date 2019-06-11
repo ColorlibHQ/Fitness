@@ -80,7 +80,7 @@ Epsilon_Customizer::add_field(
         'label'       => esc_html__( 'Header Nav-bar Background Color', 'fitness' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fitness_headertop_options_section',
-        'default'     => '#f6214b',
+        'default'     => '',
     )
 );
 
@@ -494,17 +494,6 @@ Epsilon_Customizer::add_field(
     )
 );
 
-// Footer bottom bg Color
-Epsilon_Customizer::add_field(
-    'fitness_footer_bottom_bgcolor_settings',
-    array(
-        'type'        => 'epsilon-color-picker',
-        'label'       => esc_html__( 'Footer Bottom Background Color', 'fitness' ),
-        'sanitize_callback' => 'sanitize_text_field',
-        'section'     => 'fitness_footer_options_section',
-        'default'     => '#fff',
-    )
-);
 // Footer bottom text Color
 Epsilon_Customizer::add_field(
     'fitness_footer_bottom_textcolor_settings',

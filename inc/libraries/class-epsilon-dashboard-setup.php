@@ -241,10 +241,6 @@ class Epsilon_Dashboard_Setup {
 				'integration' => true,
 				'recommended' => false,
 			),
-			'fitness-companion' => array(
-				'integration' => true,
-				'recommended' => false,
-			),
 			'elementor' => array(
 				'integration' => true,
 				'recommended' => false,
@@ -266,7 +262,6 @@ class Epsilon_Dashboard_Setup {
 
 		if ( ! $integrated ) {
 			unset( $arr['contact-form-7'] );
-			unset( $arr['fitness-companion'] );
 			unset( $arr['elementor'] );
 			unset( $arr['one-click-demo-import'] );
 		}
@@ -296,21 +291,6 @@ class Epsilon_Dashboard_Setup {
 						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'contact-form-7', 'installed', 'Contact Form 7', 'verify_cf7' ) ? __( 'Activate Plugin', 'fitness' ) : __( 'Install Plugin', 'fitness' ),
 						'type'    => 'handle-plugin',
 						'handler' => Epsilon_Init_Notify_System::plugin_verifier( 'contact-form-7', 'installed', 'Contact Form 7', 'verify_cf7' ),
-					),
-				),
-			),
-			array(
-				'id'          => 'fitness-check-ac',
-				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'fitness-companion', 'title', 'fitness Companion' ),
-				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'fitness-companion', 'description', 'fitness Companion' ),
-				'plugin_slug' => 'fitness-companion',
-				'state'       => false,
-				'check'       => defined( 'FITNESS_COMPANION_VERSION' ),
-				'actions'     => array(
-					array(
-						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'fitness-companion', 'installed', 'fitness Companion' ) ? __( 'Activate Plugin', 'fitness' ) : __( 'Install Plugin', 'fitness' ),
-						'type'    => 'handle-plugin',
-						'handler' => Epsilon_Init_Notify_System::plugin_verifier( 'fitness-companion', 'installed', 'fitness Companion' ),
 					),
 				),
 			),
@@ -368,13 +348,6 @@ class Epsilon_Dashboard_Setup {
 				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'contact-form-7', 'description', 'Contact Form 7', 'verify_cf7' ),
 				'plugin_slug' => 'contact-form-7',
 				'check'       => defined( 'WPCF7_VERSION' ),
-			),
-			array(
-				'id'          => 'fitness-check-ac',
-				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'fitness-companion', 'title', 'fitness Companion' ),
-				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'fitness-companion', 'description', 'fitness Companion' ),
-				'plugin_slug' => 'fitness-companion',
-				'check'       => defined( 'FITNESS_COMPANION_VERSION' ),
 			),
 			array(
 				'id'          => 'fitness-check-elementor',

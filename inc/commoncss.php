@@ -20,9 +20,9 @@ function fitness_common_custom_css() {
 	$headerBg          	 = ! empty( get_header_image() ) ? 'background-image:url(' . esc_url( get_header_image() ) . ')' : '';
 
 	$headerTextColor     = esc_attr( fitness_opt( 'fitness_headertextcolor', '#fff' ) );
-	$headerbgcolor       = esc_attr( fitness_opt( 'fitness_headerbgcolor', 'rgba(4,9,30,0.85)' ) );
+	$headerbgcolor       = esc_attr( fitness_opt( 'fitness_headerbgcolor' ) );
 	$headerOverlay       = esc_attr( fitness_opt( 'fitness_headeroverlaycolor', 'rgba(0,0,0,0.2)' ) );
-	$stickynavbarbg      = esc_attr( fitness_opt( 'fitness_header_navbarsticky_bgColor', '#f6214b' ) );
+	$stickynavbarbg      = esc_attr( fitness_opt( 'fitness_header_navbarsticky_bgColor' ) );
 	$navbarBgColor       = esc_attr( fitness_opt( 'fitness_header_navbar_bgColor', '#f6214b' ) );
 	$navmenuColor 		 = esc_attr( fitness_opt( 'fitness_header_navbar_menuColor', '#fff' ) );
 	$navmenuHovColor 	 = esc_attr( fitness_opt( 'fitness_header_navbar_menuHovColor', '#fff' ) );
@@ -62,6 +62,7 @@ function fitness_common_custom_css() {
 			.image-carusel-area .owl-dot.active,
 			.testomial-area .owl-dot.active,
 			.generic-banner,
+			.footer-widget .newsletter .form-group .submit-form,
 			.blog-posts-area .single-blog-post .primary-btn:hover,
 			.blog-pagination .page-item.active .page-link,
 			.blog-pagination .page-link:hover,
@@ -90,7 +91,7 @@ function fitness_common_custom_css() {
 			.tags-widget ul li:hover,
 			.pagination .nav-links .current, .pagination .nav-links .page-numbers:hover,
 			.top-category-widget-area .single-cat-widget:hover .overlay-bg,
-			.global-banner {
+			.main-menu {
 				background-color: {$themecolor};
 			}
 
@@ -157,7 +158,8 @@ function fitness_common_custom_css() {
 			.comment-form .primary-btn:hover,
 			.single-sidebar-widget ul li:hover a,
 			.footer-social a:hover i,
-			.widget-wrap .widget_fitness_recent_widget .single-post-list .details h6:hover {
+			.widget-wrap .widget_fitness_recent_widget .single-post-list .details h6:hover,
+			.single-post-area .social-links li a:hover {
 				color: {$themecolor};
 			}
 			.genric-btn.primary:hover,

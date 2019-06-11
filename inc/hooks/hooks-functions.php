@@ -50,10 +50,10 @@ if( ! function_exists( 'fitness_footer_area' ) ) {
 
 		$footerWidget = fitness_opt( 'fitness-widget-toggle-settings', false );
 
-		$noWidgets = ! empty( $footerWidget ) ? '' : ' no-widgets';
+		$noWidgets = ! empty( $footerWidget ) ? 'footer-area section-gap' : ' no-widgets';
 
 		if( ! is_404() ) {
-			echo '<footer class="footer-area section-gap'.esc_attr( $noWidgets ).'"><div class="container">';
+			echo '<footer class="'.esc_attr( $noWidgets ).'"><div class="container">';
 
 			// Footer widget
 
@@ -279,6 +279,11 @@ if( ! function_exists( 'fitness_blog_posts_bottom_meta_cb' ) ) {
 			}
 			?>
 			<p class="comments col-lg-12 col-md-12 col-6"><?php echo fitness_posted_comments(); ?></p>
+			<?php
+			// Social Share Icons
+			if( fitness_opt( 'fitness-blog-social-share-toggle' ) && function_exists( 'fitness_social_sharing_buttons' ) ) {
+				echo '<div class="social-links col-lg-12 col-md-12 col-6">'.fitness_social_sharing_buttons().'</div>';
+			} ?>
 
 
 
