@@ -70,6 +70,12 @@ if( ! defined( 'FITNESS_DIR_PATH_WIDGET' ) ) {
 }
 
 
+// Admin Enqueue script
+function fitness_admin_script(){
+    wp_enqueue_style( 'fitness-admin', get_template_directory_uri().'/assets/css/fitness_admin.css', false, '1.0.0' );
+    wp_enqueue_script( 'fitness_admin', get_template_directory_uri().'/assets/js/fitness_admin.js', false, '1.0.0' );
+}
+add_action( 'admin_enqueue_scripts', 'fitness_admin_script' );
 
 
 /**
